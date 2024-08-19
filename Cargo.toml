@@ -7,5 +7,15 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.86"
-sqlx = { version = "0.8.0", features = ["sqlite", "runtime-tokio", "tls-rustls"] }
+axum = { version = "0.7.5", features = ["http2", "query", "tracing", "macros"] }
+backtrace = "0.3.73"
+futures = "0.3.30"
+lazy_static = "1.5.0"
+nanoid = "0.4.0"
+serde = { version = "1.0.208", features = ["derive"] }
+serde_json = "1.0.125"
+sqlx = { version = "0.8.0", features = ["mysql", "runtime-tokio", "tls-rustls"] }
+thiserror = "1.0.63"
 tokio = { version = "1.39.2", features = ["rt", "rt-multi-thread", "macros"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }

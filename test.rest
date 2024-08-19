@@ -1,0 +1,7 @@
+### shorten url
+POST http://localhost:8080/shorten
+Content-Type: application/json
+
+{
+    "url": "https://www.google.com"
+}

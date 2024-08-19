@@ -1,14 +1,14 @@
 use anyhow::Result;
-use sqlx::sqlite::SqlitePool;
+use sqlx::MySqlPool;
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let pool = SqlitePool::connect("sqlite://urlshorten.db").await?;
+    let pool = MySqlPool::connect("mysql://root:sorrow@localhost:3306/shortener").await?;
     sqlx::query(
         r#"
         CREATE TABLE IF NOT EXISTS urls (
-            id CHAR(6) PRIMARY KEY,
-            url TEXT NOT NULL UNIQUE
+            id VARCHAR(50) PRIMARY KEY,
+            url TEXT NOT NULL
         )
         "#,
     )
